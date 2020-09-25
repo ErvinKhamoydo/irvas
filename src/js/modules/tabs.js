@@ -26,13 +26,13 @@ const tabs = (headerSelector, tabSelector, contentSelector, activeClass) => {
 
         if (target &&
             (target.classList.contains(tabSelector.replace(/\./, '')) ||
-            target.parentNode.classList.contains(tabSelector.replace(/\./, '')))) {
-               tab.forEach((item, i) => {
-                   if (target == item || target.parentNode == item) {
-                       hideTabContent();
-                       showTabContent(i);
-                   } 
-               }); 
+                target.parentNode.classList.contains(tabSelector.replace(/\./, '')))) {
+            tab.forEach((item, i) => {
+                if (target == item || target.parentNode == item) {
+                    hideTabContent();
+                    showTabContent(i);
+                }
+            });
         } else {
 
         }
