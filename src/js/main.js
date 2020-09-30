@@ -9,7 +9,10 @@ import images from './modules/images';
 window.addEventListener('DOMContentLoaded', () => {
     "use strict";
 
-    let modalState = {};
+    let modalState = {
+        form: 0,
+        type: 'tree'
+    };
     let deadline = '2021-10-01';
 
     changeModalState(modalState);

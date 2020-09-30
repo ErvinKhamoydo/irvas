@@ -10,6 +10,9 @@ const changeModalState = (state) => {
     checkNumInputs('#width');
     checkNumInputs('#height');
 
+    windowProfile[0].checked = true;
+    state.profile = 'cold';
+
     function bindActionToElems(event, elem, prop) {
         elem.forEach((item, i) => {
             item.addEventListener(event, () => {
