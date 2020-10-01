@@ -1831,4 +1831,8 @@ textarea:focus {
     -webkit-animation: none !important;
     animation: none !important;
   }
+
+  .big-image {
+    width: 80%;
+  }
 }

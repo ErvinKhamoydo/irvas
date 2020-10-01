@@ -18051,6 +18051,7 @@ var images = function images() {
   imgPopup.style.alignItems = 'center';
   imgPopup.style.display = 'none';
   imgPopup.appendChild(bigImage);
+  bigImage.classList.add('big-image');
   workSection.addEventListener('click', function (e) {
     e.preventDefault();
     var target = e.target;

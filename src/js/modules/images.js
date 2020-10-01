@@ -12,6 +12,8 @@ const images = () => {
 
     imgPopup.appendChild(bigImage);
 
+    bigImage.classList.add('big-image');
+
     workSection.addEventListener('click', (e) => {
         e.preventDefault();
 
