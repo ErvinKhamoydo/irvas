@@ -18148,10 +18148,23 @@ var modals = function modals() {
     return scrollWidth;
   }
 
+  function checkEvent() {
+    var windowWidth = document.querySelector('#width');
+    var windowHeight = document.querySelector('#height');
+    var add = [windowWidth, windowHeight];
+    add.forEach(function (item) {
+      item.addEventListener('input', function () {
+        if (add[0].value.length > 1 && add[1].value.length > 1) {
+          bindModal('.popup_calc_button', '.popup_calc_profile', '.popup_calc_profile_close', false);
+        }
+      });
+    });
+  }
+
+  checkEvent();
   bindModal('.popup_engineer_btn', '.popup_engineer', '.popup_engineer .popup_close');
   bindModal('.phone_link', '.popup', '.popup .popup_close');
   bindModal('.popup_calc_btn', '.popup_calc', '.popup_calc_close');
-  bindModal('.popup_calc_button', '.popup_calc_profile', '.popup_calc_profile_close', false);
   bindModal('.popup_calc_profile_button', '.popup_calc_end', '.popup_calc_end_close', false);
   showModalByTime('.popup', 60000);
 };
