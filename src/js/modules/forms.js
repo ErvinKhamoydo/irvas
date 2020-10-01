@@ -3,6 +3,7 @@ import checkNumInputs from './checkNumInputs';
 const forms = (state) => {
     const form = document.querySelectorAll('form');
     const inputs = document.querySelectorAll('input');
+    const windows = document.querySelectorAll('[data-modal]');
 
     checkNumInputs('input[name="user_phone"]');
 
@@ -19,7 +20,7 @@ const forms = (state) => {
             method: 'POST',
             body: data
         });
-        
+
         return await result.text();
     };
 
@@ -47,14 +48,18 @@ const forms = (state) => {
 
             postData('assets/server.php', formData)
                 .then(result => {
-                   console.log(result);
-                   statusMessage.textContent = message.success; 
+                    console.log(result);
+                    statusMessage.textContent = message.success;
                 })
                 .catch(() => statusMessage.textContent = message.failure)
                 .finally(() => {
                     clearInputs();
                     setTimeout(() => {
                         statusMessage.remove();
+
+                        windows.forEach(item => {
+                            item.style.display = 'none';
+                        });
                     }, 5000);
                 });
         });
