@@ -13,7 +13,7 @@ window.addEventListener('DOMContentLoaded', () => {
         form: 0,
         type: 'tree'
     };
-    let deadline = '2021-10-01';
+    let deadline = '2020-12-18';
 
     changeModalState(modalState);
     modals();
